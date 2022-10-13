@@ -15,9 +15,16 @@ public class AlbumsService implements IAlbumsService {
 	@Autowired
 	private AlbumsRepository repoAlbums;
 
-	@Override
 	public List<Album> buscarTodos() {
 		return repoAlbums.findAll();
+	}
+
+	public void guardar(Album album) {
+		repoAlbums.save(album);
+	}
+
+	public void eliminar(int idAlbum) {
+		repoAlbums.deleteById(idAlbum);
 	}
 
 }
